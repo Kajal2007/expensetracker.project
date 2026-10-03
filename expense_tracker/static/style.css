@@ -1,0 +1,56 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.navbar {
+    background: #2c3e50;
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.brand { color: #fff; font-weight: bold; font-size: 1.2rem; }
+.nav-links a { color: #fff; text-decoration: none; margin-right: 16px; }
+.nav-links a:hover { text-decoration: underline; }
+
+.container { max-width: 960px; margin: 20px auto; padding: 0 16px; }
+
+/* Dashboard cards: wrap automatically on small screens */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.card-label { margin: 0; color: #666; }
+.card-value { margin: 8px 0 0; font-size: 1.8rem; font-weight: bold; color: #2c3e50; }
+
+/* Tables scroll sideways on narrow screens */
+.table-wrapper { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e5e5; }
+th { background: #ecf0f1; }
+.empty { text-align: center; color: #888; }
+.actions { display: flex; gap: 6px; }
+.actions form { margin: 0; }
+
+/* Forms */
+.form { background: #fff; padding: 20px; border-radius: 8px; max-width: 500px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.form label { display: block; margin: 12px 0 4px; font-weight: bold; }
+input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+
+.filter-form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.filter-form input, .filter-form select { width: auto; flex: 1 1 150px; }
+
+/* Buttons */
+.btn { display: inline-block; background: #3498db; color: #fff; border: none; padding: 9px 16px; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 1rem; margin-top: 12px; }
+.filter-form .btn { margin-top: 0; }
+.btn:hover { opacity: 0.9; }
+.btn-grey { background: #95a5a6; }
+.btn-red { background: #e74c3c; }
+.btn-small { padding: 5px 10px; font-size: 0.9rem; margin-top: 0; }
+
+.error { background: #fdecea; color: #c0392b; padding: 10px; border-radius: 4px; max-width: 500px; }

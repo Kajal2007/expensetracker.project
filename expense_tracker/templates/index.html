@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        <p class="card-label">Total Records</p>
+        <p class="card-value">{{ total_records }}</p>
+    </div>
+    <div class="card">
+        <p class="card-label">Total Expenses</p>
+        <p class="card-value">₹{{ "%.2f"|format(total_expenses) }}</p>
+    </div>
+    <div class="card">
+        <p class="card-label">This Month</p>
+        <p class="card-value">₹{{ "%.2f"|format(month_total) }}</p>
+    </div>
+</div>
+
+<h2>Category-wise Totals</h2>
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr><th>Category</th><th>Total</th></tr>
+        </thead>
+        <tbody>
+            {% for category, total in category_totals.items() %}
+            <tr>
+                <td>{{ category }}</td>
+                <td>₹{{ "%.2f"|format(total) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
